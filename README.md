@@ -79,7 +79,7 @@ $ bash idfinder.sh
 [+] Saved: sree.txt
 ```
 ## File Output
-The founded results will be stored as file named you provided username (example: sree.txt).it include each platform and its corresponding url
+The founded results will be stored as file named you provided username (example: sree.txt).which will include the URLs of the platforms where the username is either available or already taken.
 
 ## Customization
 - You can modify the list of platforms in the script to add more services or remove existing ones based on your requirements.
