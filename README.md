@@ -1,5 +1,5 @@
 ## ID Finder
-IDFinder is a OSINT tool for finding profiles by username
+IDFinder is a OSINT(Open Source Intelligence) tool for finding profiles by username
 
 ID Finder is a tool designed to search  availability of a specific username (or ID) across multiple social media platforms and online services.
 
