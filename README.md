@@ -86,7 +86,8 @@ The founded results will be stored as file named you provided username (example:
 ## License
 This tool is open-source and available under the MIT License.
 
-##Author
+## Author
 -**Sreeraj**
+
 **GitHub**:https://github.com/s-r-e-e-r-a-j
 
