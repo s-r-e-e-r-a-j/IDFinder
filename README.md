@@ -20,7 +20,7 @@ cd IDFinder
 ```
 3. **Navigate to the IDFinder directory:**
 ```bash
-   cd IDFinder
+cd IDFinder
 ```
 4. **Set Up the Script:** The tool is a Bash script, so it can be run directly in any terminal that supports Bash.
 
