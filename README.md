@@ -1,5 +1,5 @@
 ## ID Finder
-ID Finder is a tool designed to search and verify the availability of a specific username (or ID) across multiple social media platforms and online services. Whether you're looking to secure your desired username or just check the availability of a profile, ID Finder simplifies the process by scanning a variety of platforms.
+ID Finder is a tool designed to search  availability of a specific username (or ID) across multiple social media platforms and online services.
 
 ## Features
 - **Multi-Platform Search**: Checks usernames across multiple platforms with ease.
