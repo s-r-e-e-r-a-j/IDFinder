@@ -1588,6 +1588,28 @@ printf "\e[1;92m Found!\e[0m https://www.gumroad.com/%s\n" $username
 printf "https://www.gumroad.com/%s\n" $username >> $username.txt
 fi
 
+## Replit
+
+printf "\e[1;77m[\e[0m\e[1;92m+\e[0m\e[1;77m] Replit: \e[0m"
+check1=$(curl -s -i "https://replit.com/@$username" -H "Accept-Language: en" -L | grep -o '404 Not Found'; echo $?)
+if [[ $check1 == *'0'* ]]; then 
+  printf "\e[1;93mNot Found!\e[0m\n"
+elif [[ $check1 == *'1'* ]]; then 
+  printf "\e[1;92m Found!\e[0m https://replit.com/@%s\n" $username
+  printf "https://replit.com/@%s\n" $username >> "$username.txt"
+fi
+
+## CodePen
+
+printf "\e[1;77m[\e[0m\e[1;92m+\e[0m\e[1;77m] CodePen: \e[0m"
+check1=$(curl -s -i "https://codepen.io/$username" -H "Accept-Language: en" -L | grep -o '404 Not Found'; echo $?)
+if [[ $check1 == *'0'* ]]; then 
+  printf "\e[1;93mNot Found!\e[0m\n"
+elif [[ $check1 == *'1'* ]]; then 
+  printf "\e[1;92m Found!\e[0m https://codepen.io/%s\n" $username
+  printf "https://codepen.io/%s\n" $username >> "$username.txt"
+fi
+
 
 partial
 }
