@@ -1632,6 +1632,72 @@ elif [[ $check1 == *'1'* ]]; then
   printf "https://dev.to/%s\n" $username >> "$username.txt"
 fi
 
+## Peerlist
+
+printf "\e[1;77m[\e[0m\e[1;92m+\e[0m\e[1;77m] Peerlist: \e[0m"
+check1=$(curl -s -i "https://peerlist.io/$username" -H "Accept-Language: en" -L | grep -o 'Not Found'; echo $?)
+if [[ $check1 == *'0'* ]]; then
+  printf "\e[1;93mNot Found!\e[0m\n"
+elif [[ $check1 == *'1'* ]]; then
+  printf "\e[1;92m Found!\e[0m https://peerlist.io/%s\n" $username
+  printf "https://peerlist.io/%s\n" $username >> "$username.txt"
+fi
+
+## Runkit
+
+printf "\e[1;77m[\e[0m\e[1;92m+\e[0m\e[1;77m] Runkit: \e[0m"
+check1=$(curl -s -i "https://runkit.com/$username" -H "Accept-Language: en" -L | grep -o '404'; echo $?)
+if [[ $check1 == *'0'* ]]; then
+  printf "\e[1;93mNot Found!\e[0m\n"
+elif [[ $check1 == *'1'* ]]; then
+  printf "\e[1;92m Found!\e[0m https://runkit.com/%s\n" $username
+  printf "https://runkit.com/%s\n" $username >> "$username.txt"
+fi
+
+## HackerOne
+
+printf "\e[1;77m[\e[0m\e[1;92m+\e[0m\e[1;77m] HackerOne: \e[0m"
+check1=$(curl -s -i "https://hackerone.com/$username" -H "Accept-Language: en" -L | grep -o '404'; echo $?)
+if [[ $check1 == *'0'* ]]; then
+  printf "\e[1;93mNot Found!\e[0m\n"
+elif [[ $check1 == *'1'* ]]; then
+  printf "\e[1;92m Found!\e[0m https://hackerone.com/%s\n" $username
+  printf "https://hackerone.com/%s\n" $username >> "$username.txt"
+fi
+
+## Hashnode
+
+printf "\e[1;77m[\e[0m\e[1;92m+\e[0m\e[1;77m] Hashnode: \e[0m"
+check1=$(curl -s -i "https://hashnode.com/@$username" -H "Accept-Language: en" -L | grep -o '404'; echo $?)
+if [[ $check1 == *'0'* ]]; then
+  printf "\e[1;93mNot Found!\e[0m\n"
+elif [[ $check1 == *'1'* ]]; then
+  printf "\e[1;92m Found!\e[0m https://hashnode.com/@%s\n" $username
+  printf "https://hashnode.com/@%s\n" $username >> "$username.txt"
+fi
+
+## Crowdin
+
+printf "\e[1;77m[\e[0m\e[1;92m+\e[0m\e[1;77m] Crowdin: \e[0m"
+check1=$(curl -s -i "https://crowdin.com/profile/$username" -H "Accept-Language: en" -L | grep -o '404'; echo $?)
+if [[ $check1 == *'0'* ]]; then
+  printf "\e[1;93mNot Found!\e[0m\n"
+elif [[ $check1 == *'1'* ]]; then
+  printf "\e[1;92m Found!\e[0m https://crowdin.com/profile/%s\n" $username
+  printf "https://crowdin.com/profile/%s\n" $username >> "$username.txt"
+fi
+
+## Itch.io
+
+printf "\e[1;77m[\e[0m\e[1;92m+\e[0m\e[1;77m] Itch.io: \e[0m"
+check1=$(curl -s -i "https://$username.itch.io" -H "Accept-Language: en" -L | grep -o '404'; echo $?)
+if [[ $check1 == *'0'* ]]; then
+  printf "\e[1;93mNot Found!\e[0m\n"
+elif [[ $check1 == *'1'* ]]; then
+  printf "\e[1;92m Found!\e[0m https://%s.itch.io\n" $username
+  printf "https://%s.itch.io\n" $username >> "$username.txt"
+fi
+
 partial
 }
 banner
