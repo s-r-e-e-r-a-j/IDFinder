@@ -614,19 +614,6 @@ printf "\e[1;92m Found!\e[0m https://foursquare.com/%s\n" $username
 printf "https://foursquare.com/%s\n" $username >> $username.txt
 fi
 
-## Roblox
-
-printf "\e[1;77m[\e[0m\e[1;92m+\e[0m\e[1;77m] Roblox: \e[0m"
-check1=$(curl -s -i "https://www.roblox.com/user.aspx?username=$username" -H "Accept-Language: en" -L | grep -o '404 Not Found' ; echo $?)
-
-if [[ $check1 == *'0'* ]] ; then 
-printf "\e[1;93mNot Found!\e[0m\n"
-elif [[ $check1 == *'1'* ]]; then 
-
-printf "\e[1;92m Found!\e[0m https://foursquare.com/%s\n" $username
-printf "https://foursquare.com/%s\n" $username >> $username.txt
-fi
-
 ## Gumroad
 
 printf "\e[1;77m[\e[0m\e[1;92m+\e[0m\e[1;77m] Gumroad: \e[0m"
