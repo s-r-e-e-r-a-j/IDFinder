@@ -1611,6 +1611,7 @@ elif [[ $check1 == *'1'* ]]; then
 fi
 
 ## WeHeartIt
+
 printf "\e[1;77m[\e[0m\e[1;92m+\e[0m\e[1;77m] WeHeartIt: \e[0m"
 check1=$(curl -s -i "https://weheartit.com/$username" -H "Accept-Language: en" -L | grep -o '404 Not Found'; echo $?)
 if [[ $check1 == *'0'* ]]; then
@@ -1621,6 +1622,7 @@ elif [[ $check1 == *'1'* ]]; then
 fi
 
 ## Dev.to
+
 printf "\e[1;77m[\e[0m\e[1;92m+\e[0m\e[1;77m] Dev.to: \e[0m"
 check1=$(curl -s -i "https://dev.to/$username" -H "Accept-Language: en" -L | grep -o '404 Not Found'; echo $?)
 if [[ $check1 == *'0'* ]]; then
