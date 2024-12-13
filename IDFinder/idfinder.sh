@@ -1222,18 +1222,6 @@ printf "\e[1;92m Found!\e[0m https://unsplash.com/@%s\n" $username
 printf "https://unsplash.com/@%s\n" $username >> $username.txt
 fi
 
-## Behance
-
-printf "\e[1;77m[\e[0m\e[1;92m+\e[0m\e[1;77m] Behance: \e[0m"
-check1=$(curl -s -i "https://www.behance.net/$username" -H "Accept-Language: en" -L | grep -o '404 Not Found' ; echo $?)
-
-if [[ $check1 == *'0'* ]]; then 
-printf "\e[1;93mNot Found!\e[0m\n"
-elif [[ $check1 == *'1'* ]]; then 
-
-printf "\e[1;92m Found!\e[0m https://www.behance.net/%s\n" $username
-printf "https://www.behance.net/%s\n" $username >> $username.txt
-fi
 
 ## Goodreads
 
@@ -1485,18 +1473,6 @@ printf "\e[1;92m Found!\e[0m https://www.plurk.com/%s\n" $username
 printf "https://www.plurk.com/%s\n" $username >> $username.txt
 fi
 
-## Mixcloud
-
-printf "\e[1;77m[\e[0m\e[1;92m+\e[0m\e[1;77m] Mixcloud: \e[0m"
-check1=$(curl -s -i "https://www.mixcloud.com/$username" -H "Accept-Language: en" -L | grep -o '404 Not Found' ; echo $?)
-
-if [[ $check1 == *'0'* ]]; then 
-printf "\e[1;93mNot Found!\e[0m\n"
-elif [[ $check1 == *'1'* ]]; then 
-
-printf "\e[1;92m Found!\e[0m https://www.mixcloud.com/%s\n" $username
-printf "https://www.mixcloud.com/%s\n" $username >> $username.txt
-fi
 
 ## Periscope
 
@@ -1696,6 +1672,39 @@ if [[ $check1 == *'0'* ]]; then
 elif [[ $check1 == *'1'* ]]; then
   printf "\e[1;92m Found!\e[0m https://%s.itch.io\n" $username
   printf "https://%s.itch.io\n" $username >> "$username.txt"
+fi
+
+## StackExchange
+
+printf "\e[1;77m[\e[0m\e[1;92m+\e[0m\e[1;77m] StackExchange: \e[0m"
+check1=$(curl -s -i "https://stackexchange.com/users/$username" -H "Accept-Language: en" -L | grep -o '404'; echo $?)
+if [[ $check1 == *'0'* ]]; then
+  printf "\e[1;93mNot Found!\e[0m\n"
+elif [[ $check1 == *'1'* ]]; then
+  printf "\e[1;92m Found!\e[0m https://stackexchange.com/users/%s\n" $username
+  printf "https://stackexchange.com/users/%s\n" $username >> "$username.txt"
+fi
+
+## Lichess
+
+printf "\e[1;77m[\e[0m\e[1;92m+\e[0m\e[1;77m] Lichess: \e[0m"
+check1=$(curl -s -i "https://lichess.org/@/$username" -H "Accept-Language: en" -L | grep -o '404'; echo $?)
+if [[ $check1 == *'0'* ]]; then
+  printf "\e[1;93mNot Found!\e[0m\n"
+elif [[ $check1 == *'1'* ]]; then
+  printf "\e[1;92m Found!\e[0m https://lichess.org/@/%s\n" $username
+  printf "https://lichess.org/@/%s\n" $username >> "$username.txt"
+fi
+
+## Strava
+
+printf "\e[1;77m[\e[0m\e[1;92m+\e[0m\e[1;77m] Strava: \e[0m"
+check1=$(curl -s -i "https://www.strava.com/athletes/$username" -H "Accept-Language: en" -L | grep -o '404'; echo $?)
+if [[ $check1 == *'0'* ]]; then
+  printf "\e[1;93mNot Found!\e[0m\n"
+elif [[ $check1 == *'1'* ]]; then
+  printf "\e[1;92m Found!\e[0m https://www.strava.com/athletes/%s\n" $username
+  printf "https://www.strava.com/athletes/%s\n" $username >> "$username.txt"
 fi
 
 partial
