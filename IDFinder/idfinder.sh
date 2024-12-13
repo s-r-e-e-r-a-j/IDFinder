@@ -497,19 +497,6 @@ printf "\e[1;92m Found!\e[0m https://www.behance.net/%s\n" $username
 printf "https://www.behance.net/%s\n" $username >> $username.txt
 fi
 
-## GoodReads
-
-printf "\e[1;77m[\e[0m\e[1;92m+\e[0m\e[1;77m] GoodReads: \e[0m"
-check1=$(curl -s -i "https://www.goodreads.com/$username" -H "Accept-Language: en" -L | grep -o '404 Not Found' ; echo $?)
-
-if [[ $check1 == *'0'* ]] ; then 
-printf "\e[1;93mNot Found!\e[0m\n"
-elif [[ $check1 == *'1'* ]]; then 
-
-printf "\e[1;92m Found!\e[0m https://www.goodreads.com/%s\n" $username
-printf "https://www.goodreads.com/%s\n" $username >> $username.txt
-fi
-
 ## Instructables
 
 printf "\e[1;77m[\e[0m\e[1;92m+\e[0m\e[1;77m] Instructables: \e[0m"
@@ -1538,32 +1525,6 @@ printf "\e[1;92m Found!\e[0m https://www.eventbrite.com/o/%s-1234567890\n" $user
 printf "https://www.eventbrite.com/o/%s-1234567890\n" $username >> $username.txt
 fi
 
-## Goodreads
-
-printf "\e[1;77m[\e[0m\e[1;92m+\e[0m\e[1;77m] Goodreads: \e[0m"
-check1=$(curl -s -i "https://www.goodreads.com/user/show/$username" -H "Accept-Language: en" -L | grep -o '404 Not Found' ; echo $?)
-
-if [[ $check1 == *'0'* ]]; then 
-printf "\e[1;93mNot Found!\e[0m\n"
-elif [[ $check1 == *'1'* ]]; then 
-
-printf "\e[1;92m Found!\e[0m https://www.goodreads.com/user/show/%s\n" $username
-printf "https://www.goodreads.com/user/show/%s\n" $username >> $username.txt
-fi
-
-## Gumroad
-
-printf "\e[1;77m[\e[0m\e[1;92m+\e[0m\e[1;77m] Gumroad: \e[0m"
-check1=$(curl -s -i "https://www.gumroad.com/$username" -H "Accept-Language: en" -L | grep -o '404 Not Found' ; echo $?)
-
-if [[ $check1 == *'0'* ]]; then 
-printf "\e[1;93mNot Found!\e[0m\n"
-elif [[ $check1 == *'1'* ]]; then 
-
-printf "\e[1;92m Found!\e[0m https://www.gumroad.com/%s\n" $username
-printf "https://www.gumroad.com/%s\n" $username >> $username.txt
-fi
-
 ## Replit
 
 printf "\e[1;77m[\e[0m\e[1;92m+\e[0m\e[1;77m] Replit: \e[0m"
@@ -1705,6 +1666,17 @@ if [[ $check1 == *'0'* ]]; then
 elif [[ $check1 == *'1'* ]]; then
   printf "\e[1;92m Found!\e[0m https://www.strava.com/athletes/%s\n" $username
   printf "https://www.strava.com/athletes/%s\n" $username >> "$username.txt"
+fi
+
+## ResearchGate
+
+printf "\e[1;77m[\e[0m\e[1;92m+\e[0m\e[1;77m] ResearchGate: \e[0m"
+check1=$(curl -s -i "https://www.researchgate.net/profile/$username" -H "Accept-Language: en" -L | grep -o '404'; echo $?)
+if [[ $check1 == *'0'* ]]; then
+  printf "\e[1;93mNot Found!\e[0m\n"
+elif [[ $check1 == *'1'* ]]; then
+  printf "\e[1;92m Found!\e[0m https://www.researchgate.net/profile/%s\n" $username
+  printf "https://www.researchgate.net/profile/%s\n" $username >> "$username.txt"
 fi
 
 partial
