@@ -1622,6 +1622,337 @@ elif [[ $check1 == *'1'* ]]; then
   printf "https://www.younow.com/%s\n" $username >> "$username.txt"
 fi
 
+## Loox
+
+printf "\e[1;77m[\e[0m\e[1;92m+\e[0m\e[1;77m] Loox: \e[0m"
+check1=$(curl -s -i "https://loox.app/u/$username" -H "Accept-Language: en" -L | grep -o '404'; echo $?)
+if [[ $check1 == *'0'* ]]; then
+  printf "\e[1;93mNot Found!\e[0m\n"
+elif [[ $check1 == *'1'* ]]; then
+  printf "\e[1;92m Found!\e[0m https://loox.app/u/%s\n" $username
+  printf "https://loox.app/u/%s\n" $username >> "$username.txt"
+fi
+
+## Behance Portfolio
+
+printf "\e[1;77m[\e[0m\e[1;92m+\e[0m\e[1;77m] Behance Portfolio: \e[0m"
+check1=$(curl -s -i "https://www.behance.net/$username/portfolio" -H "Accept-Language: en" -L | grep -o '404'; echo $?)
+if [[ $check1 == *'0'* ]]; then
+  printf "\e[1;93mNot Found!\e[0m\n"
+elif [[ $check1 == *'1'* ]]; then
+  printf "\e[1;92m Found!\e[0m https://www.behance.net/%s/portfolio\n" $username
+  printf "https://www.behance.net/%s/portfolio\n" $username >> "$username.txt"
+fi
+
+## Codewars
+
+printf "\e[1;77m[\e[0m\e[1;92m+\e[0m\e[1;77m] Codewars: \e[0m"
+check1=$(curl -s -i "https://www.codewars.com/users/$username" -H "Accept-Language: en" -L | grep -o '404'; echo $?)
+if [[ $check1 == *'0'* ]]; then
+  printf "\e[1;93mNot Found!\e[0m\n"
+elif [[ $check1 == *'1'* ]]; then
+  printf "\e[1;92m Found!\e[0m https://www.codewars.com/users/%s\n" $username
+  printf "https://www.codewars.com/users/%s\n" $username >> "$username.txt"
+fi
+
+## Dribbble Teams
+
+printf "\e[1;77m[\e[0m\e[1;92m+\e[0m\e[1;77m] Dribbble Teams: \e[0m"
+check1=$(curl -s -i "https://dribbble.com/teams/$username" -H "Accept-Language: en" -L | grep -o '404'; echo $?)
+if [[ $check1 == *'0'* ]]; then
+  printf "\e[1;93mNot Found!\e[0m\n"
+elif [[ $check1 == *'1'* ]]; then
+  printf "\e[1;92m Found!\e[0m https://dribbble.com/teams/%s\n" $username
+  printf "https://dribbble.com/teams/%s\n" $username >> "$username.txt"
+fi
+
+## Noteflight
+
+printf "\e[1;77m[\e[0m\e[1;92m+\e[0m\e[1;77m] Noteflight: \e[0m"
+check1=$(curl -s -i "https://www.noteflight.com/profile/$username" -H "Accept-Language: en" -L | grep -o '404'; echo $?)
+if [[ $check1 == *'0'* ]]; then
+  printf "\e[1;93mNot Found!\e[0m\n"
+elif [[ $check1 == *'1'* ]]; then
+  printf "\e[1;92m Found!\e[0m https://www.noteflight.com/profile/%s\n" $username
+  printf "https://www.noteflight.com/profile/%s\n" $username >> "$username.txt"
+fi
+
+## Polywork
+
+printf "\e[1;77m[\e[0m\e[1;92m+\e[0m\e[1;77m] Polywork: \e[0m"
+check1=$(curl -s -i "https://www.polywork.com/$username" -H "Accept-Language: en" -L | grep -o '404'; echo $?)
+if [[ $check1 == *'0'* ]]; then
+  printf "\e[1;93mNot Found!\e[0m\n"
+elif [[ $check1 == *'1'* ]]; then
+  printf "\e[1;92m Found!\e[0m https://www.polywork.com/%s\n" $username
+  printf "https://www.polywork.com/%s\n" $username >> "$username.txt"
+fi
+
+## Keybase Teams
+
+printf "\e[1;77m[\e[0m\e[1;92m+\e[0m\e[1;77m] Keybase Teams: \e[0m"
+check1=$(curl -s -i "https://keybase.io/team/$username" -H "Accept-Language: en" -L | grep -o '404'; echo $?)
+if [[ $check1 == *'0'* ]]; then
+  printf "\e[1;93mNot Found!\e[0m\n"
+elif [[ $check1 == *'1'* ]]; then
+  printf "\e[1;92m Found!\e[0m https://keybase.io/team/%s\n" $username
+  printf "https://keybase.io/team/%s\n" $username >> "$username.txt"
+fi
+
+## Behance Projects
+
+printf "\e[1;77m[\e[0m\e[1;92m+\e[0m\e[1;77m] Behance Projects: \e[0m"
+check1=$(curl -s -i "https://www.behance.net/$username/projects" -H "Accept-Language: en" -L | grep -o '404'; echo $?)
+if [[ $check1 == *'0'* ]]; then
+  printf "\e[1;93mNot Found!\e[0m\n"
+elif [[ $check1 == *'1'* ]]; then
+  printf "\e[1;92m Found!\e[0m https://www.behance.net/%s/projects\n" $username
+  printf "https://www.behance.net/%s/projects\n" $username >> "$username.txt"
+fi
+
+## Linktree
+
+printf "\e[1;77m[\e[0m\e[1;92m+\e[0m\e[1;77m] Linktree: \e[0m"
+check1=$(curl -s -i "https://linktr.ee/$username" -H "Accept-Language: en" -L | grep -o '404'; echo $?)
+if [[ $check1 == *'0'* ]]; then
+  printf "\e[1;93mNot Found!\e[0m\n"
+elif [[ $check1 == *'1'* ]]; then
+  printf "\e[1;92m Found!\e[0m https://linktr.ee/%s\n" $username
+  printf "https://linktr.ee/%s\n" $username >> "$username.txt"
+fi
+
+## TripIt
+
+printf "\e[1;77m[\e[0m\e[1;92m+\e[0m\e[1;77m] TripIt: \e[0m"
+check1=$(curl -s -i "https://www.tripit.com/people/$username" -H "Accept-Language: en" -L | grep -o '404'; echo $?)
+if [[ $check1 == *'0'* ]]; then
+  printf "\e[1;93mNot Found!\e[0m\n"
+elif [[ $check1 == *'1'* ]]; then
+  printf "\e[1;92m Found!\e[0m https://www.tripit.com/people/%s\n" $username
+  printf "https://www.tripit.com/people/%s\n" $username >> "$username.txt"
+fi
+
+## Devpost
+
+printf "\e[1;77m[\e[0m\e[1;92m+\e[0m\e[1;77m] Devpost: \e[0m"
+check1=$(curl -s -i "https://devpost.com/$username" -H "Accept-Language: en" -L | grep -o '404'; echo $?)
+if [[ $check1 == *'0'* ]]; then
+  printf "\e[1;93mNot Found!\e[0m\n"
+elif [[ $check1 == *'1'* ]]; then
+  printf "\e[1;92m Found!\e[0m https://devpost.com/%s\n" $username
+  printf "https://devpost.com/%s\n" $username >> "$username.txt"
+fi
+
+## Rarible
+
+printf "\e[1;77m[\e[0m\e[1;92m+\e[0m\e[1;77m] Rarible: \e[0m"
+check1=$(curl -s -i "https://rarible.com/$username" -H "Accept-Language: en" -L | grep -o '404'; echo $?)
+if [[ $check1 == *'0'* ]]; then
+  printf "\e[1;93mNot Found!\e[0m\n"
+elif [[ $check1 == *'1'* ]]; then
+  printf "\e[1;92m Found!\e[0m https://rarible.com/%s\n" $username
+  printf "https://rarible.com/%s\n" $username >> "$username.txt"
+fi
+
+## Behance Teams
+
+printf "\e[1;77m[\e[0m\e[1;92m+\e[0m\e[1;77m] Behance Teams: \e[0m"
+check1=$(curl -s -i "https://www.behance.net/$username/teams" -H "Accept-Language: en" -L | grep -o '404'; echo $?)
+if [[ $check1 == *'0'* ]]; then
+  printf "\e[1;93mNot Found!\e[0m\n"
+elif [[ $check1 == *'1'* ]]; then
+  printf "\e[1;92m Found!\e[0m https://www.behance.net/%s/teams\n" $username
+  printf "https://www.behance.net/%s/teams\n" $username >> "$username.txt"
+fi
+
+## Hashbase
+
+printf "\e[1;77m[\e[0m\e[1;92m+\e[0m\e[1;77m] Hashbase: \e[0m"
+check1=$(curl -s -i "https://hashbase.io/$username" -H "Accept-Language: en" -L | grep -o '404'; echo $?)
+if [[ $check1 == *'0'* ]]; then
+  printf "\e[1;93mNot Found!\e[0m\n"
+elif [[ $check1 == *'1'* ]]; then
+  printf "\e[1;92m Found!\e[0m https://hashbase.io/%s\n" $username
+  printf "https://hashbase.io/%s\n" $username >> "$username.txt"
+fi
+
+## Unsplash Collections
+
+printf "\e[1;77m[\e[0m\e[1;92m+\e[0m\e[1;77m] Unsplash Collections: \e[0m"
+check1=$(curl -s -i "https://unsplash.com/collections/$username" -H "Accept-Language: en" -L | grep -o '404'; echo $?)
+if [[ $check1 == *'0'* ]]; then
+  printf "\e[1;93mNot Found!\e[0m\n"
+elif [[ $check1 == *'1'* ]]; then
+  printf "\e[1;92m Found!\e[0m https://unsplash.com/collections/%s\n" $username
+  printf "https://unsplash.com/collections/%s\n" $username >> "$username.txt"
+fi
+
+## Pixiv
+
+printf "\e[1;77m[\e[0m\e[1;92m+\e[0m\e[1;77m] Pixiv: \e[0m"
+check1=$(curl -s -i "https://www.pixiv.net/en/users/$username" -H "Accept-Language: en" -L | grep -o '404'; echo $?)
+if [[ $check1 == *'0'* ]]; then
+  printf "\e[1;93mNot Found!\e[0m\n"
+elif [[ $check1 == *'1'* ]]; then
+  printf "\e[1;92m Found!\e[0m https://www.pixiv.net/en/users/%s\n" $username
+  printf "https://www.pixiv.net/en/users/%s\n" $username >> "$username.txt"
+fi
+
+## ShutterStock
+
+printf "\e[1;77m[\e[0m\e[1;92m+\e[0m\e[1;77m] ShutterStock: \e[0m"
+check1=$(curl -s -i "https://www.shutterstock.com/g/$username" -H "Accept-Language: en" -L | grep -o '404'; echo $?)
+if [[ $check1 == *'0'* ]]; then
+  printf "\e[1;93mNot Found!\e[0m\n"
+elif [[ $check1 == *'1'* ]]; then
+  printf "\e[1;92m Found!\e[0m https://www.shutterstock.com/g/%s\n" $username
+  printf "https://www.shutterstock.com/g/%s\n" $username >> "$username.txt"
+fi
+
+## Canva Teams
+
+printf "\e[1;77m[\e[0m\e[1;92m+\e[0m\e[1;77m] Canva Teams: \e[0m"
+check1=$(curl -s -i "https://www.canva.com/teams/$username" -H "Accept-Language: en" -L | grep -o '404'; echo $?)
+if [[ $check1 == *'0'* ]]; then
+  printf "\e[1;93mNot Found!\e[0m\n"
+elif [[ $check1 == *'1'* ]]; then
+  printf "\e[1;92m Found!\e[0m https://www.canva.com/teams/%s\n" $username
+  printf "https://www.canva.com/teams/%s\n" $username >> "$username.txt"
+fi
+
+## ArtStation
+
+printf "\e[1;77m[\e[0m\e[1;92m+\e[0m\e[1;77m] ArtStation: \e[0m"
+check1=$(curl -s -i "https://www.artstation.com/$username" -H "Accept-Language: en" -L | grep -o '404'; echo $?)
+if [[ $check1 == *'0'* ]]; then
+  printf "\e[1;93mNot Found!\e[0m\n"
+elif [[ $check1 == *'1'* ]]; then
+  printf "\e[1;92m Found!\e[0m https://www.artstation.com/%s\n" $username
+  printf "https://www.artstation.com/%s\n" $username >> "$username.txt"
+fi
+
+## Ello Projects
+
+printf "\e[1;77m[\e[0m\e[1;92m+\e[0m\e[1;77m] Ello Projects: \e[0m"
+check1=$(curl -s -i "https://ello.co/$username/projects" -H "Accept-Language: en" -L | grep -o '404'; echo $?)
+if [[ $check1 == *'0'* ]]; then
+  printf "\e[1;93mNot Found!\e[0m\n"
+elif [[ $check1 == *'1'* ]]; then
+  printf "\e[1;92m Found!\e[0m https://ello.co/%s/projects\n" $username
+  printf "https://ello.co/%s/projects\n" $username >> "$username.txt"
+fi
+
+## Gumroad Affiliates
+
+printf "\e[1;77m[\e[0m\e[1;92m+\e[0m\e[1;77m] Gumroad Affiliates: \e[0m"
+check1=$(curl -s -i "https://www.gumroad.com/affiliates/$username" -H "Accept-Language: en" -L | grep -o '404'; echo $?)
+if [[ $check1 == *'0'* ]]; then
+  printf "\e[1;93mNot Found!\e[0m\n"
+elif [[ $check1 == *'1'* ]]; then
+  printf "\e[1;92m Found!\e[0m https://www.gumroad.com/affiliates/%s\n" $username
+  printf "https://www.gumroad.com/affiliates/%s\n" $username >> "$username.txt"
+fi
+
+## CreativeMarket Shops
+
+printf "\e[1;77m[\e[0m\e[1;92m+\e[0m\e[1;77m] CreativeMarket Shops: \e[0m"
+check1=$(curl -s -i "https://creativemarket.com/shops/$username" -H "Accept-Language: en" -L | grep -o '404'; echo $?)
+if [[ $check1 == *'0'* ]]; then
+  printf "\e[1;93mNot Found!\e[0m\n"
+elif [[ $check1 == *'1'* ]]; then
+  printf "\e[1;92m Found!\e[0m https://creativemarket.com/shops/%s\n" $username
+  printf "https://creativemarket.com/shops/%s\n" $username >> "$username.txt"
+fi
+
+## Goodreads Authors
+
+printf "\e[1;77m[\e[0m\e[1;92m+\e[0m\e[1;77m] Goodreads Authors: \e[0m"
+check1=$(curl -s -i "https://www.goodreads.com/author/show/$username" -H "Accept-Language: en" -L | grep -o '404'; echo $?)
+if [[ $check1 == *'0'* ]]; then
+  printf "\e[1;93mNot Found!\e[0m\n"
+elif [[ $check1 == *'1'* ]]; then
+  printf "\e[1;92m Found!\e[0m https://www.goodreads.com/author/show/%s\n" $username
+  printf "https://www.goodreads.com/author/show/%s\n" $username >> "$username.txt"
+fi
+
+## StackShare
+
+printf "\e[1;77m[\e[0m\e[1;92m+\e[0m\e[1;77m] StackShare: \e[0m"
+check1=$(curl -s -i "https://stackshare.io/$username" -H "Accept-Language: en" -L | grep -o '404'; echo $?)
+if [[ $check1 == *'0'* ]]; then
+  printf "\e[1;93mNot Found!\e[0m\n"
+elif [[ $check1 == *'1'* ]]; then
+  printf "\e[1;92m Found!\e[0m https://stackshare.io/%s\n" $username
+  printf "https://stackshare.io/%s\n" $username >> "$username.txt"
+fi
+
+## HeroForge
+
+printf "\e[1;77m[\e[0m\e[1;92m+\e[0m\e[1;77m] HeroForge: \e[0m"
+check1=$(curl -s -i "https://www.heroforge.com/profile/$username" -H "Accept-Language: en" -L | grep -o '404'; echo $?)
+if [[ $check1 == *'0'* ]]; then
+  printf "\e[1;93mNot Found!\e[0m\n"
+elif [[ $check1 == *'1'* ]]; then
+  printf "\e[1;92m Found!\e[0m https://www.heroforge.com/profile/%s\n" $username
+  printf "https://www.heroforge.com/profile/%s\n" $username >> "$username.txt"
+fi
+
+## CodeChef
+
+printf "\e[1;77m[\e[0m\e[1;92m+\e[0m\e[1;77m] CodeChef: \e[0m"
+check1=$(curl -s -i "https://www.codechef.com/users/$username" -H "Accept-Language: en" -L | grep -o '404'; echo $?)
+if [[ $check1 == *'0'* ]]; then
+  printf "\e[1;93mNot Found!\e[0m\n"
+elif [[ $check1 == *'1'* ]]; then
+  printf "\e[1;92m Found!\e[0m https://www.codechef.com/users/%s\n" $username
+  printf "https://www.codechef.com/users/%s\n" $username >> "$username.txt"
+fi
+
+## LeetCode
+
+printf "\e[1;77m[\e[0m\e[1;92m+\e[0m\e[1;77m] LeetCode: \e[0m"
+check1=$(curl -s -i "https://leetcode.com/$username" -H "Accept-Language: en" -L | grep -o '404'; echo $?)
+if [[ $check1 == *'0'* ]]; then
+  printf "\e[1;93mNot Found!\e[0m\n"
+elif [[ $check1 == *'1'* ]]; then
+  printf "\e[1;92m Found!\e[0m https://leetcode.com/%s\n" $username
+  printf "https://leetcode.com/%s\n" $username >> "$username.txt"
+fi
+
+## AO3 (Archive of Our Own)
+
+printf "\e[1;77m[\e[0m\e[1;92m+\e[0m\e[1;77m] AO3: \e[0m"
+check1=$(curl -s -i "https://archiveofourown.org/users/$username" -H "Accept-Language: en" -L | grep -o '404'; echo $?)
+if [[ $check1 == *'0'* ]]; then
+  printf "\e[1;93mNot Found!\e[0m\n"
+elif [[ $check1 == *'1'* ]]; then
+  printf "\e[1;92m Found!\e[0m https://archiveofourown.org/users/%s\n" $username
+  printf "https://archiveofourown.org/users/%s\n" $username >> "$username.txt"
+fi
+
+## HackTheBox
+
+printf "\e[1;77m[\e[0m\e[1;92m+\e[0m\e[1;77m] HackTheBox: \e[0m"
+check1=$(curl -s -i "https://www.hackthebox.com/home/users/profile/$username" -H "Accept-Language: en" -L | grep -o '404'; echo $?)
+if [[ $check1 == *'0'* ]]; then
+  printf "\e[1;93mNot Found!\e[0m\n"
+elif [[ $check1 == *'1'* ]]; then
+  printf "\e[1;92m Found!\e[0m https://www.hackthebox.com/home/users/profile/%s\n" $username
+  printf "https://www.hackthebox.com/home/users/profile/%s\n" $username >> "$username.txt"
+fi
+
+## Hackaday
+
+printf "\e[1;77m[\e[0m\e[1;92m+\e[0m\e[1;77m] Hackaday: \e[0m"
+check1=$(curl -s -i "https://hackaday.io/$username" -H "Accept-Language: en" -L | grep -o '404'; echo $?)
+if [[ $check1 == *'0'* ]]; then
+  printf "\e[1;93mNot Found!\e[0m\n"
+elif [[ $check1 == *'1'* ]]; then
+  printf "\e[1;92m Found!\e[0m https://hackaday.io/%s\n" $username
+  printf "https://hackaday.io/%s\n" $username >> "$username.txt"
+fi
+
+
 
 partial
 }
