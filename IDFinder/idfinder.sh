@@ -354,19 +354,6 @@ printf "\e[1;92m Found!\e[0m https://medium.com/@%s\n" $username
 printf "https://medium.com/@%s\n" $username >> $username.txt
 fi
 
-## DEVIANTART
-
-printf "\e[1;77m[\e[0m\e[1;92m+\e[0m\e[1;77m] DeviantART: \e[0m"
-check1=$(curl -s -i "https://$username.deviantart.com" -H "Accept-Language: en" -L | grep -o 'HTTP/2 404' ; echo $?)
-
-if [[ $check1 == *'0'* ]] ; then 
-printf "\e[1;93mNot Found!\e[0m\n"
-elif [[ $check1 == *'1'* ]]; then 
-
-printf "\e[1;92m Found!\e[0m https://%s.deviantart.com\n" $username
-printf "https://%s.deviantart.com\n" $username >> $username.txt
-fi
-
 ## VK
 
 printf "\e[1;77m[\e[0m\e[1;92m+\e[0m\e[1;77m] VK: \e[0m"
@@ -1223,20 +1210,6 @@ printf "\e[1;92m Found!\e[0m https://www.indiehackers.com/@%s\n" $username
 printf "https://www.indiehackers.com/@%s\n" $username >> $username.txt
 fi
 
-## Patreon
-
-printf "\e[1;77m[\e[0m\e[1;92m+\e[0m\e[1;77m] Patreon: \e[0m"
-check1=$(curl -s -i "https://www.patreon.com/$username" -H "Accept-Language: en" -L | grep -o '404 Not Found' ; echo $?)
-
-if [[ $check1 == *'0'* ]]; then 
-printf "\e[1;93mNot Found!\e[0m\n"
-elif [[ $check1 == *'1'* ]]; then 
-
-printf "\e[1;92m Found!\e[0m https://www.patreon.com/%s\n" $username
-printf "https://www.patreon.com/%s\n" $username >> $username.txt
-fi
-
-
 ## Product Hunt
 
 printf "\e[1;77m[\e[0m\e[1;92m+\e[0m\e[1;77m] Product Hunt: \e[0m"
@@ -1458,19 +1431,6 @@ elif [[ $check1 == *'1'* ]]; then
 
 printf "\e[1;92m Found!\e[0m https://www.epicgames.com/id/%s\n" $username
 printf "https://www.epicgames.com/id/%s\n" $username >> $username.txt
-fi
-
-## Dribbble
-
-printf "\e[1;77m[\e[0m\e[1;92m+\e[0m\e[1;77m] Dribbble: \e[0m"
-check1=$(curl -s -i "https://dribbble.com/$username" -H "Accept-Language: en" -L | grep -o 'HTTP/2 404' ; echo $?)
-
-if [[ $check1 == *'0'* ]]; then 
-printf "\e[1;93mNot Found!\e[0m\n"
-elif [[ $check1 == *'1'* ]]; then 
-
-printf "\e[1;92m Found!\e[0m https://dribbble.com/%s\n" $username
-printf "https://dribbble.com/%s\n" $username >> $username.txt
 fi
 
 ## Quora
