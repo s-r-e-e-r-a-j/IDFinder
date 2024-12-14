@@ -60,7 +60,7 @@ install_dependencies
 banner() {
  
     clear
-    echo -e "\033[92m\033[1m"
+    echo -e "\033[0m\033[92m\033[1m"
     cat << "EOF"
      
   _____ _____    ______ _           _           
