@@ -1,5 +1,5 @@
 ## ID Finder
-IDFinder is a OSINT(Open Source Intelligence) tool for finding profiles by username
+IDFinder is An OSINT (Open Source Intelligence) tool for finding profiles based on usernames, developed for Termux as well as Linux distributions like Kali Linux, Parrot OS, and others.
 
 ID Finder is a tool designed to search  availability of a specific username (or ID) across multiple social media platforms and online services.
 
