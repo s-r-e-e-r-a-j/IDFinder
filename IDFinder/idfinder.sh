@@ -1,6 +1,9 @@
 trap 'printf "\n";partial;exit 1' 2
 
-
+BrightRed="\e[1;91m"
+BrightGreen="\e[1;92m"
+BrightYellow="\e[1;93m"
+BrightWhite="\e[1;97m"
 # Function to install dependencies
 install_dependencies() {
     echo -e "${BrightWhite}[${BrightYellow}*${BrightWhite}] ${BrightYellow}Checking and installing dependencies..."
