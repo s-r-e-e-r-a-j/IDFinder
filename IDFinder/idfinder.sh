@@ -6,49 +6,49 @@ BrightYellow="\e[1;93m"
 BrightWhite="\e[1;97m"
 # Function to install dependencies
 install_dependencies() {
-    echo -e "${BrightWhite}[${BrightYellow}*${BrightWhite}] ${BrightYellow}Checking and installing dependencies..."
+    echo -e "${BrightWhite}[${BrightYellow}*${BrightWhite}] ${BrightYellow}Checking and installing dependencies...\033[0m"
 
     # For Termux
     if [ -d "/data/data/com.termux/files/usr" ]; then
-        echo -e "${BrightWhite}[${BrightGreen}*${BrightWhite}] ${BrightGreen}Detected Termux environment"
+        echo -e "${BrightWhite}[${BrightGreen}*${BrightWhite}] ${BrightGreen}Detected Termux environment\033[0m"
         
         # Install curl if missing
         if ! command -v curl &> /dev/null; then
-            echo -e "${BrightWhite}[${BrightRed}!${BrightWhite}] ${BrightRed}curl not found, installing..."
+            echo -e "${BrightWhite}[${BrightRed}!${BrightWhite}] ${BrightRed}curl not found, installing...\033[0m"
             pkg install curl -y
         fi
 
         # Install grep if missing
         if ! command -v grep &> /dev/null; then
-            echo -e "${BrightWhite}[${BrightRed}!${BrightWhite}] ${BrightRed}grep not found, installing..."
+            echo -e "${BrightWhite}[${BrightRed}!${BrightWhite}] ${BrightRed}grep not found, installing...\033[0m"
             pkg install grep -y
         fi
     else
         # For Linux environments (Debian/Ubuntu or RedHat-based)
-        echo -e "${BrightWhite}[${BrightGreen}*${BrightWhite}] ${BrightGreen}Detected Linux environment"
+        echo -e "${BrightWhite}[${BrightGreen}*${BrightWhite}] ${BrightGreen}Detected Linux environment\033[0m"
 
         # Check for curl and install if missing
         if ! command -v curl &> /dev/null; then
-            echo -e "${BrightWhite}[${BrightRed}!${BrightWhite}] ${BrightRed}curl not found, installing..."
+            echo -e "${BrightWhite}[${BrightRed}!${BrightWhite}] ${BrightRed}curl not found, installing...\033[0m"
             if [ -x "$(command -v apt-get)" ]; then
                 sudo apt-get install curl -y
             elif [ -x "$(command -v yum)" ]; then
                 sudo yum install curl -y
             else
-                echo -e "${BrightWhite}[${BrightRed}!${BrightWhite}] ${BrightRed}Package manager not found. Please install curl manually."
+                echo -e "${BrightWhite}[${BrightRed}!${BrightWhite}] ${BrightRed}Package manager not found. Please install curl manually.\033[0m"
                 exit 1
             fi
         fi
         
         # Check for grep and install if missing
         if ! command -v grep &> /dev/null; then
-            echo -e "${BrightWhite}[${BrightRed}!${BrightWhite}] ${BrightRed}grep not found, installing..."
+            echo -e "${BrightWhite}[${BrightRed}!${BrightWhite}] ${BrightRed}grep not found, installing...\033[0m"
             if [ -x "$(command -v apt-get)" ]; then
                 sudo apt-get install grep -y
             elif [ -x "$(command -v yum)" ]; then
                 sudo yum install grep -y
             else
-                echo -e "${BrightWhite}[${BrightRed}!${BrightWhite}] ${BrightRed}Package manager not found. Please install grep manually."
+                echo -e "${BrightWhite}[${BrightRed}!${BrightWhite}] ${BrightRed}Package manager not found. Please install grep manually.\033[0m"
                 exit 1
             fi
         fi
