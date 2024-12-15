@@ -73,7 +73,7 @@ banner() {
                              Developer:Sreeraj         
                                                                                                                         
 EOF
-    echo -e "\033[0m\033[93m* copyright of Sreeraj, 2024  *"
+    echo -e "\033[0m\033[93m* Copyright © Sreeraj, 2024  *"
     echo -e "\033[93m* GitHub: https://github.com/s-r-e-e-r-a-j  *\033[0m"
     echo
  
